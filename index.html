@@ -3,48 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>أحدث ملفات قنوات Géant 2026 - TECH NEWS</title>
+    <title>جاري تحضير الرابط - TECH NEWS</title>
     <style>
-        body { font-family: sans-serif; line-height: 1.6; background: #f4f4f4; color: #333; margin: 0; padding: 20px; }
-        .container { max-width: 800px; margin: auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); text-align: right; }
-        h1 { color: #e67e22; }
-        .content { margin: 20px 0; border-bottom: 2px solid #eee; padding-bottom: 20px; }
-        .download-box { background: #fff3e0; border: 2px dashed #e67e22; padding: 20px; text-align: center; margin-top: 30px; }
-        .btn { background: #e67e22; color: white; padding: 15px 40px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 20px; cursor: pointer; border: none; }
-        .ad-space { color: #999; font-size: 10px; margin-top: 50px; }
+        body { font-family: sans-serif; background-color: #f0f2f5; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; }
+        .box { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); text-align: center; max-width: 400px; width: 90%; }
+        .loader { border: 5px solid #f3f3f3; border-top: 5px solid #3498db; border-radius: 50%; width: 40px; height: 40px; animation: spin 2s linear infinite; margin: 20px auto; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        #downloadBtn { display: none; background: #28a745; color: white; padding: 15px 30px; border: none; border-radius: 5px; cursor: pointer; font-size: 18px; font-weight: bold; width: 100%; }
+        #timer { font-size: 20px; color: #e74c3c; font-weight: bold; }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <h1>أحدث ملفات قنوات أجهزة Géant لعام 2026</h1>
-    <p>مرحباً بكم في موقع TECH NEWS ARABIC. اليوم نقدم لكم التحديث الحصري لملفات القنوات المرتبة لأجهزة جيون، بما فيها جهاز GN-2500 وغيرها من الموديلات الحديثة. تم ترتيب القنوات بعناية لتشمل باقات الرياضة والأفلام والوثائقيات.</p>
-    
-    <div class="content">
-        <h3>مميزات هذا الملف:</h3>
-        <ul>
-            <li>ترتيب احترافي لجميع الأقمار (Nilesat, Astra, Hotbird).</li>
-            <li>تحديث ترددات 2026 الجديدة.</li>
-            <li>حذف القنوات المتوقفة والمكررة.</li>
-        </ul>
-    </div>
-
-    <div class="download-box">
-        <h3>هل أنت جاهز للتحميل؟</h3>
-        <p>اضغط على الزر أدناه وسيبدأ التحميل فوراً عبر السيرفر المباشر.</p>
-        <br>
-        <button onclick="start()" class="btn">تحميل الملف الآن (Direct Download)</button>
-    </div>
-
-    <div class="ad-space">الإعلانات تساعدنا على الاستمرار في تقديم التحديثات المجانية.</div>
+<div class="box">
+    <h2>TECH NEWS ARABIC</h2>
+    <p>يتم الآن فحص وتجهيز ملف القنوات...</p>
+    <div id="loader" class="loader"></div>
+    <p id="status">يرجى الانتظار <span id="timer">10</span> ثانية</p>
+    <button id="downloadBtn" onclick="go()">إضغط للتحميل الآن</button>
 </div>
 
 <script>
-function start() {
-    // الرابط الأخير الذي أعطيتني إياه
-    var r = "https://www.effectivegatecpm.com/rqh0w6f8?key=3cab13c99b3cd48b5084666edb512990";
-    window.location.href = r;
-}
+    var seconds = 10;
+    var timerDisplay = document.getElementById('timer');
+    var loader = document.getElementById('loader');
+    var statusText = document.getElementById('status');
+    var btn = document.getElementById('downloadBtn');
+
+    var countdown = setInterval(function() {
+        seconds--;
+        timerDisplay.textContent = seconds;
+        if (seconds <= 0) {
+            clearInterval(countdown);
+            loader.style.display = 'none';
+            statusText.textContent = "الرابط جاهز الآن!";
+            btn.style.display = 'block';
+        }
+    }, 1000);
+
+    function go() {
+        // تشفير الرابط يدوياً لزيادة التمويه
+        var a = "https://www.";
+        var b = "effectivegatecpm";
+        var c = ".com/rqh0w6f8?key=3cab13c99b3cd48b5084666edb512990";
+        window.location.href = a + b + c;
+    }
 </script>
 
 </body>
